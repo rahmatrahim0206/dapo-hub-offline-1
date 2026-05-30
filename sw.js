@@ -4,15 +4,18 @@
  * Berkas ini menangani caching aset statis dan fungsionalitas offline PWA secara presisi.
  */
 
-const CACHE_NAME = 'dapohub-cache-v2';
+const CACHE_NAME = 'dapohub-cache-v3';
 
-// Daftar aset utama yang akan disimpan di dalam cache untuk akses offline penuh
+// Daftar aset utama yang disimpan di dalam cache untuk akses offline penuh
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+  // PRE-CACHING FONTS: Memastikan berkas font ikon disimpan secara utuh agar tidak kosong saat offline
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2',
   'https://cdn-icons-png.flaticon.com/512/2210/2210143.png'
 ];
 
@@ -21,10 +24,10 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
+        // Melakukan pre-cache seluruh aset statis
         return cache.addAll(ASSETS_TO_CACHE);
       })
       .then(() => {
-        // Memaksa Service Worker yang baru dipasang untuk langsung aktif
         return self.skipWaiting();
       })
   );
@@ -37,47 +40,83 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            // Hapus cache versi sebelumnya demi keselarasan data terbaru
+            // Hapus cache versi lama
             return caches.delete(cache);
           }
         })
       );
     }).then(() => {
-      // Mengambil alih kendali halaman secara langsung tanpa harus memuat ulang (reload)
       return self.clients.claim();
     })
   );
 });
 
-// Event: Fetch (Strategi Network-First dengan Fallback ke Cache saat Offline)
+// Event: Fetch (Strategi Gabungan: Cache-First untuk CDN & Network-First untuk berkas lokal)
 self.addEventListener('fetch', (event) => {
-  // Hanya proses permintaan dengan metode GET
   if (event.request.method !== 'GET') return;
 
-  event.respondWith(
-    fetch(event.request)
-      .then((networkResponse) => {
-        // Jika respons valid, duplikat dan simpan versi terbaru ke dalam cache
-        if (networkResponse && networkResponse.status === 200) {
-          const responseToCache = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
+  const requestUrl = new URL(event.request.url);
+
+  // Strategi 1: Cache-First untuk CDN eksternal (Tailwind, Fonts, FontAwesome, Favicon)
+  if (
+    requestUrl.hostname.includes('cdn.tailwindcss.com') ||
+    requestUrl.hostname.includes('fonts.googleapis.com') ||
+    requestUrl.hostname.includes('fonts.gstatic.com') ||
+    requestUrl.hostname.includes('cdnjs.cloudflare.com') ||
+    requestUrl.hostname.includes('cdn-icons-png.flaticon.com')
+  ) {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          // Segera kembalikan cache lokal (instan 0ms)
+          // Lakukan pembaruan di latar belakang jika online
+          if (navigator.onLine) {
+            fetch(event.request).then((networkResponse) => {
+              if (networkResponse.status === 200) {
+                caches.open(CACHE_NAME).then((cache) => {
+                  cache.put(event.request, networkResponse);
+                });
+              }
+            }).catch(() => { /* Silent ignore */ });
+          }
+          return cachedResponse;
         }
-        return networkResponse;
-      })
-      .catch(() => {
-        // Jika jaringan gagal/offline, ambil aset dari cache lokal peramban
-        return caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
+
+        // Jika belum ada di cache, unduh dari jaringan luar dan simpan ke cache
+        return fetch(event.request).then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
           }
-          
-          // Jika permintaan berupa navigasi halaman utama dan tidak ada di cache, arahkan ke index.html lokal
-          if (event.request.mode === 'navigate') {
-            return caches.match('./index.html');
-          }
+          return networkResponse;
         });
       })
-  );
+    );
+  } else {
+    // Strategi 2: Network-First untuk berkas lokal (index.html, dll.) agar pembaruan kode instan terasa saat online
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.status === 200) {
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+            if (event.request.mode === 'navigate') {
+              return caches.match('./index.html');
+            }
+          });
+        })
+    );
+  }
 });
