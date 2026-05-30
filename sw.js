@@ -5,10 +5,10 @@
  * Dioptimalkan khusus untuk Domain Produksi: app.dapohub.web.id
  */
 
-const CACHE_NAME = 'dapohub-spentig-cache-v3';
+const CACHE_NAME = 'dapohub-spentig-cache-v4';
 
 // Daftar aset utama yang wajib disimpan di dalam cache untuk akses offline penuh tanpa interupsi
-// PERBAIKAN: Menambahkan '/' karena aplikasi sekarang berjalan pada root domain kustom app.dapohub.web.id
+// Dioptimalkan untuk navigasi root domain kustom app.dapohub.web.id
 const ASSETS_TO_CACHE = [
   '/',
   'index.html',
@@ -46,7 +46,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
-            // Hapus cache versi lama demi mencegah bentrok data
+            // Hapus cache versi lama demi mencegah bentrok data luring
             return caches.delete(key);
           }
         })
@@ -65,8 +65,7 @@ self.addEventListener('fetch', (event) => {
 
   if (!event.request.url.startsWith('http')) return;
 
-  // Intersepsi khusus untuk permintaan Navigasi Utama (Offline Fallback ke index.html)
-  // PERBAIKAN: Dioptimalkan untuk navigasi root domain app.dapohub.web.id
+  // Intersepsi khusus untuk permintaan Navigasi Utama (Offline Fallback ke index.html atau root)
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() => {
@@ -80,7 +79,7 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
-      // Pencarian cache yang mengabaikan parameter pencarian URL (?query) agar lebih akurat
+      // Pencarian cache yang mengabaikan parameter pencarian URL (?query) agar lebih akurat di Chrome
       const cachedResponse = await cache.match(event.request, { ignoreSearch: true });
       
       const fetchPromise = fetch(event.request).then((networkResponse) => {
