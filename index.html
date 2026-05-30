@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- FontAwesome Icons dengan Crossorigin Anonymous agar bisa di-cache dengan aman oleh Service Worker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     body {
@@ -1281,7 +1281,6 @@
       renderCalendar();
     }
 
-    // Beranjak ke bulan berikutnya
     function nextMonth() {
       currentDate.setMonth(currentDate.getMonth() + 1);
       renderCalendar();
@@ -1500,10 +1499,12 @@
         statusPing.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75";
         statusDot.className = "relative inline-flex rounded-full h-2 w-2 bg-emerald-500";
         statusText.textContent = "Aktif (Online)";
+        showToast("Portal kembali Online! Menyinkronkan data...");
       } else {
         statusPing.className = "animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75";
         statusDot.className = "relative inline-flex rounded-full h-2 w-2 bg-rose-500";
         statusText.textContent = "Offline";
+        showToast("Anda sedang Offline. Portal berjalan dalam mode lokal.", "info");
       }
     }
 
