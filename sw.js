@@ -4,16 +4,15 @@
  * Berkas ini menangani caching aset statis dan fungsionalitas offline PWA secara presisi.
  */
 
-const CACHE_NAME = 'dapohub-cache-v4';
+const CACHE_NAME = 'dapohub-cache-v5';
 
 // Daftar aset utama yang disimpan di dalam cache untuk akses offline penuh
-// PERBAIKAN: Menyederhanakan rujukan root agar Chrome Windows tidak mendeteksi kegagalan caching jalur ganda
+// PERBAIKAN: Menggunakan rujukan path relatif 'index.html' tanpa './' agar kompatibel penuh dengan sub-direktori GitHub Pages
 const ASSETS_TO_CACHE = [
-  './index.html',
+  'index.html',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-  // PRE-CACHING FONTS: Memastikan berkas font ikon disimpan secara utuh agar tidak kosong saat offline
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2',
   'https://cdn-icons-png.flaticon.com/512/2210/2210143.png'
@@ -112,9 +111,9 @@ self.addEventListener('fetch', (event) => {
             if (cachedResponse) {
               return cachedResponse;
             }
-            // Fallback aman mengarah langsung ke index.html lokal
+            // Fallback aman mengarah langsung ke index.html lokal di GitHub Pages
             if (event.request.mode === 'navigate') {
-              return caches.match('./index.html');
+              return caches.match('index.html');
             }
           });
         })
