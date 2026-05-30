@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <!-- Detail Kanan: Status Akreditasi & Slogan Pelayanan (Tidak Dipotong) -->
+      <!-- Detail Kanan: Status Akreditasi & Slogan Pelayanan (Motto Pelayanan Diatur Permanen Statis) -->
       <div class="flex flex-wrap items-center gap-4 relative z-10 md:text-right shrink-0">
         <div class="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-2 shadow-sm min-w-[150px]">
           <span class="block text-[9px] text-slate-400 font-bold uppercase tracking-wider">Status Akreditasi</span>
@@ -144,8 +144,8 @@
         </div>
         <div class="bg-white/70 backdrop-blur-sm border border-slate-200 rounded-xl px-4 py-2 shadow-sm min-w-[150px]">
           <span class="block text-[9px] text-slate-400 font-bold uppercase tracking-wider">Motto Pelayanan</span>
-          <span id="view-motto" class="text-xs font-medium italic text-slate-600 mt-0.5 block">
-            "-"
+          <span class="text-xs font-medium italic text-slate-600 mt-0.5 block">
+            "Sedikit bicara banyak kerjaannya"
           </span>
         </div>
       </div>
@@ -364,10 +364,6 @@
         <div>
           <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Status Akreditasi</label>
           <input type="text" id="input-akreditasi" required class="w-full bg-slate-50 text-slate-800 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-sky-500 focus:bg-white transition-all" />
-        </div>
-        <div>
-          <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1.5">Motto Pelayanan</label>
-          <input type="text" id="input-motto" required class="w-full bg-slate-50 text-slate-800 border border-slate-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-sky-500 focus:bg-white transition-all" />
         </div>
         
         <!-- Opsi Tambahan & Form Pembuatan Passkey Manual -->
@@ -890,8 +886,7 @@
         npsn: "10293847",
         status: "Negeri",
         operator: "Operator Hebat",
-        akreditasi: "A (Unggul)",
-        motto: "Sedikit bicara banyak kerjaannya"
+        akreditasi: "A (Unggul)"
       };
 
       // PERBAIKAN SINKRONISASI: Menjamin default ditulis ke localStorage jika kunci belum terinisialisasi
@@ -900,20 +895,17 @@
       if (!localStorage.getItem('dapo_profile_status')) localStorage.setItem('dapo_profile_status', defaults.status);
       if (!localStorage.getItem('dapo_profile_operator')) localStorage.setItem('dapo_profile_operator', defaults.operator);
       if (!localStorage.getItem('dapo_profile_akreditasi')) localStorage.setItem('dapo_profile_akreditasi', defaults.akreditasi);
-      if (!localStorage.getItem('dapo_profile_motto')) localStorage.setItem('dapo_profile_motto', defaults.motto);
 
       const nama = localStorage.getItem('dapo_profile_nama');
       const npsn = localStorage.getItem('dapo_profile_npsn');
       const status = localStorage.getItem('dapo_profile_status');
       const op = localStorage.getItem('dapo_profile_operator');
       const akreditasi = localStorage.getItem('dapo_profile_akreditasi');
-      const motto = localStorage.getItem('dapo_profile_motto');
 
       document.getElementById('view-nama-sekolah').textContent = nama;
       document.getElementById('view-npsn').textContent = `NPSN: ${npsn} • ${status}`;
       document.getElementById('view-operator').textContent = `Operator: ${op}`;
       document.getElementById('view-akreditasi').textContent = akreditasi;
-      document.getElementById('view-motto').textContent = motto;
 
       const today = new Date();
       selectedDateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
@@ -941,8 +933,7 @@
         npsn: "10293847",
         status: "Negeri",
         operator: "Operator Hebat",
-        akreditasi: "A (Unggul)",
-        motto: "Sedikit bicara banyak kerjaannya"
+        akreditasi: "A (Unggul)"
       };
 
       document.getElementById('input-nama-sekolah').value = localStorage.getItem('dapo_profile_nama') || defaults.nama;
@@ -950,7 +941,6 @@
       document.getElementById('input-status-sekolah').value = localStorage.getItem('dapo_profile_status') || defaults.status;
       document.getElementById('input-operator').value = localStorage.getItem('dapo_profile_operator') || defaults.operator;
       document.getElementById('input-akreditasi').value = localStorage.getItem('dapo_profile_akreditasi') || defaults.akreditasi;
-      document.getElementById('input-motto').value = localStorage.getItem('dapo_profile_motto') || defaults.motto;
       
       const usePasskey = localStorage.getItem('dapo_use_passkey') === 'true';
       document.getElementById('input-use-passkey').checked = usePasskey;
@@ -979,7 +969,6 @@
       const status = document.getElementById('input-status-sekolah').value;
       const op = document.getElementById('input-operator').value;
       const akreditasi = document.getElementById('input-akreditasi').value;
-      const motto = document.getElementById('input-motto').value;
       const usePasskey = document.getElementById('input-use-passkey').checked;
       const passkeyVal = document.getElementById('input-passkey-val').value.trim();
 
@@ -993,7 +982,6 @@
       localStorage.setItem('dapo_profile_status', status);
       localStorage.setItem('dapo_profile_operator', op);
       localStorage.setItem('dapo_profile_akreditasi', akreditasi);
-      localStorage.setItem('dapo_profile_motto', motto);
       localStorage.setItem('dapo_use_passkey', usePasskey ? 'true' : 'false');
 
       if (usePasskey && passkeyVal) {
@@ -1035,7 +1023,8 @@
         const catLinks = activeLinks.filter(item => item.category === cat);
         if (catLinks.length > 0) {
           const catHeader = document.createElement('div');
-          catHeader.className = "col-span-full mt-4 first:mt-0 text-[10px] font-extrabold text-sky-600 tracking-wider uppercase flex items-center gap-2";
+          // PERBAIKAN: Ketebalan kategori header tautan dan ukuran disempurnakan agar sangat presisi (text-[11px])
+          catHeader.className = "col-span-full mt-6 first:mt-0 text-[11px] font-extrabold text-sky-600 tracking-wider uppercase flex items-center gap-2";
           
           let displayLabel = cat;
           if (cat === "Verifikasi") displayLabel = "Verifikasi & Validasi";
@@ -1051,12 +1040,13 @@
 
             const card = document.createElement('div');
             card.className = "bg-white border border-slate-200 hover:border-sky-400/80 rounded-xl p-4 flex items-start gap-4 transition-all duration-300 relative group shadow-sm hover:shadow-md";
+            // PERBAIKAN: Mengubah text-xs judul tautan menjadi text-sm agar seimbang dengan kolom kalender/agenda/memo di sebelah kanan
             card.innerHTML = `
               <a href="${link.url}" target="_blank" class="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center text-sky-500 group-hover:bg-sky-50 group-hover:border-sky-300 group-hover:text-sky-600 transition-all shrink-0" title="Buka ${link.title}">
                 <i class="${link.icon || 'fa-solid fa-link'} text-sm"></i>
               </a>
               <div class="flex-1 min-w-0">
-                <h4 class="text-xs font-bold text-slate-800 truncate">
+                <h4 class="text-sm font-bold text-slate-800 truncate">
                   <a href="${link.url}" target="_blank" class="hover:text-sky-600 hover:underline transition-all block truncate w-full" title="Buka ${link.title}">
                     ${link.title} <i class="fa-solid fa-external-link text-[9px] text-slate-400 ml-1 group-hover:text-sky-500 transition-colors"></i>
                   </a>
@@ -1291,6 +1281,7 @@
       renderCalendar();
     }
 
+    // Beranjak ke bulan berikutnya
     function nextMonth() {
       currentDate.setMonth(currentDate.getMonth() + 1);
       renderCalendar();
@@ -1436,7 +1427,6 @@
         status: localStorage.getItem('dapo_profile_status') || "Negeri",
         operator: localStorage.getItem('dapo_profile_operator') || "Operator Hebat",
         akreditasi: localStorage.getItem('dapo_profile_akreditasi') || "A (Unggul)",
-        motto: localStorage.getItem('dapo_profile_motto') || "Sedikit bicara banyak kerjaannya",
         usePasskey: localStorage.getItem('dapo_use_passkey') === 'true',
         links: JSON.parse(localStorage.getItem('dapo_links')) || [...defaultLinks],
         agenda: JSON.parse(localStorage.getItem('dapo_agenda')) || [],
@@ -1472,7 +1462,6 @@
           localStorage.setItem('dapo_profile_status', importedData.status || "Negeri");
           localStorage.setItem('dapo_profile_operator', importedData.operator || "Operator Hebat");
           localStorage.setItem('dapo_profile_akreditasi', importedData.akreditasi || "A (Unggul)");
-          localStorage.setItem('dapo_profile_motto', importedData.motto || "Sedikit bicara banyak kerjaannya");
           localStorage.setItem('dapo_use_passkey', importedData.usePasskey === true ? 'true' : 'false');
           localStorage.setItem('dapo_links', JSON.stringify(importedData.links));
           localStorage.setItem('dapo_agenda', JSON.stringify(importedData.agenda || []));
