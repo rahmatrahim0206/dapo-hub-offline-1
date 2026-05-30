@@ -4,11 +4,11 @@
  * Berkas ini menangani caching aset statis dan fungsionalitas offline PWA secara presisi.
  */
 
-const CACHE_NAME = 'dapohub-cache-v3';
+const CACHE_NAME = 'dapohub-cache-v4';
 
 // Daftar aset utama yang disimpan di dalam cache untuk akses offline penuh
+// PERBAIKAN: Menyederhanakan rujukan root agar Chrome Windows tidak mendeteksi kegagalan caching jalur ganda
 const ASSETS_TO_CACHE = [
-  './',
   './index.html',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
@@ -24,7 +24,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        // Melakukan pre-cache seluruh aset statis
+        // Melakukan pre-cache seluruh aset statis secara paksa
         return cache.addAll(ASSETS_TO_CACHE);
       })
       .then(() => {
@@ -40,7 +40,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cache) => {
           if (cache !== CACHE_NAME) {
-            // Hapus cache versi lama
+            // Hapus cache versi lama demi mencegah bentrok data
             return caches.delete(cache);
           }
         })
@@ -112,6 +112,7 @@ self.addEventListener('fetch', (event) => {
             if (cachedResponse) {
               return cachedResponse;
             }
+            // Fallback aman mengarah langsung ke index.html lokal
             if (event.request.mode === 'navigate') {
               return caches.match('./index.html');
             }
