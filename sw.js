@@ -1,18 +1,18 @@
 /**
- * DAPO-HUB Service Worker
- * Dikembangkan oleh Rahmat Rahim (OPS SMP Negeri 3 Makassar)
+ * DAPO-HUB Service Worker (sw.js)
+ * Dikembangkan oleh Rahmat Rahim
  * Berkas ini menangani caching aset statis dan fungsionalitas offline PWA secara presisi.
- * Dioptimalkan khusus untuk Domain Produksi: app.dapohub.web.id
+ * Dioptimalkan untuk file utama: index.html
  */
 
-const CACHE_NAME = 'dapohub-spentig-cache-v4';
+const CACHE_NAME = 'dapohub-universal-cache-v5';
 
-// Daftar aset utama yang wajib disimpan di dalam cache untuk akses offline penuh tanpa interupsi
-// Dioptimalkan untuk navigasi root domain kustom app.dapohub.web.id
+// Daftar aset utama yang wajib disimpan di dalam cache untuk akses luring penuh tanpa interupsi
+// Diselaraskan penuh ke index.html
 const ASSETS_TO_CACHE = [
-  '/',
-  'index.html',
-  'manifest.json',
+  './',
+  './index.html',
+  './manifest.json',
   'https://cdn-icons-png.flaticon.com/512/2210/2210143.png',
   'https://cdn.tailwindcss.com',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
@@ -25,8 +25,6 @@ const ASSETS_TO_CACHE = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      // Melakukan caching secara individual agar jika salah satu aset gagal (404),
-      // Service Worker tetap sukses terinstall dan tombol PWA Chrome Windows tidak terblokir!
       const cachePromises = ASSETS_TO_CACHE.map((asset) => {
         return cache.add(asset).catch((err) => {
           console.warn(`[Service Worker] Gagal menyimpan aset ke cache: ${asset}`, err);
@@ -46,7 +44,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
-            // Hapus cache versi lama demi mencegah bentrok data luring
+            console.log('[Service Worker] Menghapus cache usang:', key);
             return caches.delete(key);
           }
         })
@@ -57,20 +55,17 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Event: Fetch (Strategi Gabungan Cerdas: Stale-While-Revalidate untuk PWA Tercepat)
+// Event: Fetch (Strategi: Stale-While-Revalidate untuk performa terbaik)
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
-
-  const requestUrl = new URL(event.request.url);
-
   if (!event.request.url.startsWith('http')) return;
 
-  // Intersepsi khusus untuk permintaan Navigasi Utama (Offline Fallback ke index.html atau root)
+  // Intersepsi Navigasi Utama (Offline Fallback dialihkan ke index.html)
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() => {
-        return caches.match('index.html', { ignoreSearch: true }) || 
-               caches.match('/', { ignoreSearch: true }) || 
+        return caches.match('./index.html', { ignoreSearch: true }) || 
+               caches.match('./', { ignoreSearch: true }) || 
                caches.match(event.request);
       })
     );
@@ -79,7 +74,6 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
-      // Pencarian cache yang mengabaikan parameter pencarian URL (?query) agar lebih akurat di Chrome
       const cachedResponse = await cache.match(event.request, { ignoreSearch: true });
       
       const fetchPromise = fetch(event.request).then((networkResponse) => {
@@ -88,7 +82,7 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch(() => {
-        // Abaikan error fetch untuk aset non-navigasi saat offline
+        // Mengabaikan error fetch saat offline mendadak
       });
 
       return cachedResponse || fetchPromise;
@@ -96,7 +90,7 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// Menambahkan listener pesan untuk memaksa Service Worker langsung aktif tanpa menunggu halaman dimuat ulang
+// Listener pesan untuk memaksa Service Worker langsung aktif tanpa menunggu restart browser
 self.addEventListener('message', (event) => {
   if (event.data && event.data.action === 'skipWaiting') {
     self.skipWaiting();
