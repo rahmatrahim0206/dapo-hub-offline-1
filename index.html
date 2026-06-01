@@ -97,12 +97,12 @@
 
   <!-- HEADER UTAMA RESPONSIVE & ANTI-LUBER -->
   <header class="sticky top-0 z-40 w-full custom-glass border-b border-slate-200/80 shadow-sm">
-    <div class="max-w-[1920px] mx-auto px-3 sm:px-6 lg:px-8 min-h-[4.5rem] py-2 sm:py-0 flex items-center justify-between gap-2">
+    <div class="max-w-[1920px] mx-auto px-3 sm:px-6 lg:px-8 min-h-[3.5rem] sm:min-h-[3.75rem] py-1.5 sm:py-0 flex items-center justify-between gap-2">
       
-      <div class="flex items-center gap-2 sm:gap-4 min-w-0">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
         <!-- LOGO DAPO-HUB PREMIUM KUSTOM BARU (NETWORK DATA HUB) -->
-        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-tr from-brand-600 to-brand-400 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/20 transform hover:rotate-12 transition-all duration-300 flex-shrink-0 group">
-          <span class="w-6.5 h-6.5 sm:w-8 sm:h-8 text-white">
+        <div class="w-8.5 h-8.5 sm:w-10 sm:h-10 bg-gradient-to-tr from-brand-600 to-brand-400 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md shadow-brand-500/10 transform hover:rotate-12 transition-all duration-300 flex-shrink-0 group">
+          <span class="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5 text-white">
             <svg class="w-full h-full transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" />
               <circle cx="12" cy="12" r="2.5" fill="currentColor" class="animate-pulse" />
@@ -115,35 +115,35 @@
         </div>
         <div class="flex flex-col min-w-0">
           <div class="flex items-center gap-1.5 flex-wrap">
-            <h1 class="text-lg sm:text-2xl font-extrabold text-outfit tracking-tight bg-gradient-to-r from-brand-700 to-brand-500 bg-clip-text text-transparent leading-none">
+            <h1 class="text-base sm:text-lg font-extrabold text-outfit tracking-tight bg-gradient-to-r from-brand-700 to-brand-500 bg-clip-text text-transparent leading-none">
               DAPO-HUB
             </h1>
             <span id="status-badge" class="flex items-center gap-1 transition-all duration-300">
-              <span id="status-dot" class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span id="status-text" class="text-emerald-600 font-extrabold text-[10px] sm:text-xs tracking-wide">Online</span>
+              <span id="status-dot" class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span id="status-text" class="text-emerald-600 font-extrabold text-[9px] sm:text-[10px] tracking-wide">Online</span>
             </span>
           </div>
-          <p class="text-[9px] sm:text-[11px] text-slate-500 font-medium truncate hidden sm:block">Sistem Integrasi Layanan IT & Manajemen Dapodik</p>
+          <p class="text-[8px] sm:text-[10px] text-slate-500 font-medium truncate hidden sm:block">Sistem Integrasi Layanan IT & Manajemen Dapodik</p>
         </div>
       </div>
 
       <!-- KONTROL KANAN HEADER RESPONSIVE -->
-      <div class="flex items-center gap-1.5 sm:gap-3.5 flex-shrink-0">
+      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
         
         <!-- CONTAINER INSTALASI PWA YANG DINAMIS -->
         <div id="pwa-install-container" class="flex items-center transition-all duration-300">
           <!-- Diisi otomatis melalui JS -->
         </div>
 
-        <div id="minimalist-clock" class="h-9 sm:h-11 flex items-center gap-1.5 sm:gap-2.5 px-2.5 sm:px-4 bg-slate-100/80 border border-slate-200/80 rounded-xl sm:rounded-2xl text-[10px] sm:text-xs font-semibold text-slate-700 shadow-sm transition-all">
-          <span class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-500 flex items-center">
+        <div id="minimalist-clock" class="h-8 sm:h-9 flex items-center gap-1 sm:gap-2 px-2 sm:px-3 bg-slate-100/80 border border-slate-200/80 rounded-lg sm:rounded-xl text-[9px] sm:text-[11px] font-semibold text-slate-700 shadow-sm transition-all">
+          <span class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand-500 flex items-center">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           </span>
-          <span id="live-time" class="text-outfit font-black tracking-wider text-[11px] sm:text-[13px] whitespace-nowrap">--:-- WIB</span>
+          <span id="live-time" class="text-outfit font-black tracking-wider text-[10px] sm:text-[12px] whitespace-nowrap">--:-- WIB</span>
         </div>
 
-        <button onclick="requestEmergencyResetSession()" class="h-9 w-9 sm:h-11 sm:w-11 flex items-center justify-center text-rose-600 hover:text-rose-700 bg-slate-100/80 hover:bg-rose-50/50 rounded-xl sm:rounded-2xl border border-slate-200/80 hover:border-rose-200 transition-all shadow-sm group" title="Reset Sesi Darurat">
-          <span class="w-4.5 h-4.5 sm:w-5 sm:h-5 flex items-center justify-center group-hover:rotate-180 transition-transform duration-500">
+        <button onclick="requestEmergencyResetSession()" class="h-8 w-8 sm:h-9 sm:w-9 flex items-center justify-center text-rose-600 hover:text-rose-700 bg-slate-100/80 hover:bg-rose-50/50 rounded-lg sm:rounded-xl border border-slate-200/80 hover:border-rose-200 transition-all shadow-sm group" title="Reset Sesi Darurat">
+          <span class="w-4 h-4 sm:w-4.5 sm:h-4.5 flex items-center justify-center group-hover:rotate-180 transition-transform duration-500">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9"></path></svg>
           </span>
         </button>
@@ -449,7 +449,7 @@
       <div class="space-y-4 py-4">
         <div><label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Nama Tautan</label><input type="text" id="link-title" placeholder="Contoh: Info GTK" class="w-full mt-1.5 px-4 py-2.5 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 outline-none font-semibold" /></div>
         <div><label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">URL Tautan</label><input type="text" id="link-url" placeholder="https://..." class="w-full mt-1.5 px-4 py-2.5 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-brand-500 outline-none font-semibold" /></div>
-        <div><label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-2">Pilih Ikon</label><div class="grid grid-cols-6 gap-2 border border-slate-100 p-3 rounded-2xl bg-slate-50" id="icon-picker-container"></div><input type="hidden" id="selected-icon-class" value="link" /></div>
+        <div><label class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block mb-2">Pilih Ikon</label><div class="grid grid-cols-6 gap-2 border border-slate-100 p-3 rounded-2xl bg-slate-50" id="icon-picker-container"></div><input type="hidden" id="selected-icon-class" value="laptop" /></div>
       </div>
       <div class="flex gap-2 pt-4 border-t border-slate-100">
         <button onclick="addCustomLink()" class="flex-1 py-3 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-xl shadow-md shadow-brand-500/20 transition-all">Simpan</button>
@@ -507,71 +507,6 @@
       <div class="flex gap-2">
         <button onclick="executeEmergencyResetSession()" class="flex-1 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-xl shadow-sm">Ya, Bersihkan</button>
         <button onclick="closeConfirmResetModal()" class="flex-1 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold rounded-xl">Batal</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL DIAGNOSTIK & PANDUAN PWA -->
-  <div id="pwa-diagnostic-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-300 opacity-0 " id="pwa-diag-content">
-      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
-        <h3 class="text-lg font-extrabold text-slate-800 text-outfit flex items-center gap-2">
-          <span class="w-5 h-5 text-brand-500"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 111.063.852l-.708 2.836a.75.75 0 001.063.852l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path></svg></span>
-          Panduan & Diagnostik PWA
-        </h3>
-        <button onclick="closePWARequestModal()" class="p-2 text-slate-400 hover:text-slate-600 rounded-xl transition-colors">
-          <span class="w-5 h-5 flex items-center justify-center"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg></span>
-        </button>
-      </div>
-      
-      <div class="space-y-4 py-4 text-xs text-slate-600 leading-relaxed">
-        <p class="text-[13px] font-semibold text-slate-700">Modul Instalasi PWA saat ini dikonfigurasi menggunakan <strong>Instan Inline Manifest</strong> agar tidak bergantung pada berkas server.</p>
-        
-        <!-- Live Diagnostic Status -->
-        <div class="bg-slate-50 border border-slate-200/60 p-4 rounded-2xl space-y-2.5 font-semibold">
-          <h4 class="font-extrabold text-slate-800 text-[11px] uppercase tracking-wider flex items-center gap-1.5">
-            <span class="w-4 h-4 text-brand-500"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"></path></svg></span>
-            Status PWA & Integrasi Server:
-          </h4>
-          <div class="flex items-center justify-between">
-            <span>Metode Manifes</span>
-            <span class="font-bold text-emerald-600 flex items-center gap-1">Inline (Aktif & Cepat)</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Registrasi Service Worker</span>
-            <span id="diag-sw-status" class="font-bold flex items-center gap-1 text-slate-500">Mengecek...</span>
-          </div>
-          <div class="flex items-center justify-between">
-            <span>Protokol Keamanan (HTTPS / SSL)</span>
-            <span id="diag-https-status" class="font-bold text-emerald-600 flex items-center gap-1">Aktif</span>
-          </div>
-        </div>
-
-        <div class="space-y-3">
-          <h4 class="font-extrabold text-slate-800 text-[11px] uppercase tracking-wider flex items-center gap-1.5">
-            <span class="w-4 h-4 text-brand-500"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5"></path></svg></span>
-            Cara Memasang Secara Manual:
-          </h4>
-          <div class="space-y-2.5 pl-1 text-[11px]">
-            <div class="flex gap-2">
-              <span class="w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-500 flex-shrink-0">1</span>
-              <p><strong>iOS / Safari (Apple):</strong> Ketuk tombol bagikan Safari, lalu gulir ke bawah dan pilih <strong class="text-slate-800">"Tambahkan ke Layar Utama"</strong>.</p>
-            </div>
-            <div class="flex gap-2">
-              <span class="w-5 h-5 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-500 flex-shrink-0">2</span>
-              <p><strong>Android / Chrome:</strong> Jika tombol instalasi otomatis tidak merespons, ketuk ikon menu titik tiga di kanan atas Chrome, lalu pilih <strong class="text-slate-800">"Instal aplikasi"</strong> atau <strong class="text-slate-800">"Tambahkan ke Layar Utama"</strong>.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-brand-50/50 border border-brand-100 p-3 rounded-xl text-[11px] text-brand-800 font-semibold flex items-start gap-2">
-          <span class="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-3H9.75a.75.75 0 00-.53.22L7.47 17c-.39.39-.11 1.06.44 1.06h8.18c.55 0 .83-.67.44-1.06l-1.75-1.78a.75.75 0 00-.53-.22H12z"></path></svg></span>
-          <span>Tips: Berkat sistem Inline Manifest, instalasi PWA di peramban Anda kini dapat dipicu secara langsung dan instan tanpa masalah konfigurasi silang hosting (CORS).</span>
-        </div>
-      </div>
-
-      <div class="pt-4 border-t border-slate-100">
-        <button onclick="closePWARequestModal()" class="w-full py-3 bg-slate-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow-sm transition-colors">Tutup Panduan</button>
       </div>
     </div>
   </div>
@@ -695,18 +630,20 @@
       { id: 'def-30', category: 'Sertifikasi', title: 'Rumah Belajar', url: 'https://rumah.pendidikan.go.id/', icon: 'school-flag', isCustom: false },
       { id: 'def-31', category: 'Sertifikasi', title: 'SIMPKB Login', url: 'https://paspor-gtk.simpkb.id/casgpo/login?service=https%3A%2F%2Fapp.simpkb.id%2Fauth%2Flogin', icon: 'chalkboard-user', isCustom: false },
       { id: 'def-32', category: 'Kepegawaian', title: 'e-Kinerja BKN', url: 'https://kinerja.bkn.go.id', icon: 'chalkboard-user', isCustom: false },
-      { id: 'def-33', category: 'Kepegawaian', title: 'MyASN BKN', url: 'https://myasn.bkn.go.id', icon: 'id-card', isCustom: false },
-      { id: 'def-34', category: 'Kepegawaian', title: 'SIMPEG Kemendikdasmen', url: 'https://simpeg.bkpsdmd.makassarkota.go.id/', icon: 'id-card', isCustom: false },
-      { id: 'def-35', category: 'Ujian', title: 'Bio-AN SMP', url: 'https://bioportal.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
-      { id: 'def-36', category: 'Ujian', title: 'Portal TKA & Asesmen Bakat', url: 'https://tka.kemendikdasmen.go.id/', icon: 'computer', isCustom: false },
-      { id: 'def-37', category: 'Ujian', title: 'Portal Web ANBK', url: 'https://anbk.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
-      { id: 'def-38', category: 'Daerah', title: 'Dinas Pendidikan Makassar', url: 'https://disdik.makassarkota.go.id', icon: 'city', isCustom: false },
-      { id: 'def-39', category: 'Daerah', title: 'Makan Bergizi Gratis (MBG)', url: 'https://mbg.pdm.kemendikdasmen.go.id/portal', icon: 'utensils', isCustom: false },
-      { id: 'def-40', category: 'Daerah', title: 'Portal SPMB Makassar', url: 'https://spmb.makassarkota.go.id/', icon: 'city', isCustom: false },
-      { id: 'def-41', category: 'Utilitas', title: 'cekip.com', url: 'https://cekip.com/', icon: 'globe', isCustom: false },
-      { id: 'def-42', category: 'Utilitas', title: 'Speedtest', url: 'https://www.speedtest.net/', icon: 'gauge', isCustom: false },
-      { id: 'def-43', category: 'Utilitas', title: 'TinyPNG', url: 'https://tinypng.com/', icon: 'image', isCustom: false },
-      { id: 'def-44', category: 'Utilitas', title: 'WhatsApp Web', url: 'https://web.whatsapp.com/', icon: 'comments', isCustom: false }
+      { id: 'def-33', category: 'Kepegawaian', title: 'e-Sakti Makassar', url: 'https://esakti.makassar.go.id', icon: 'network-wired', isCustom: false },
+      { id: 'def-34', category: 'Kepegawaian', title: 'MyASN BKN', url: 'https://myasn.bkn.go.id', icon: 'id-card', isCustom: false },
+      { id: 'def-35', category: 'Kepegawaian', title: 'SIMPEG Kemendikdasmen', url: 'https://simpeg.bkpsdmd.makassarkota.go.id/', icon: 'id-card', isCustom: false },
+      { id: 'def-36', category: 'Kepegawaian', title: 'SIPP Makassar', url: 'https://sipp.makassar.go.id', icon: 'city', isCustom: false },
+      { id: 'def-37', category: 'Ujian', title: 'Bio-AN SMP', url: 'https://bioansmp.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
+      { id: 'def-38', category: 'Ujian', title: 'Portal TKA & Asesmen Bakat', url: 'https://tka.kemendikdasmen.go.id/', icon: 'computer', isCustom: false },
+      { id: 'def-39', category: 'Ujian', title: 'Portal Web ANBK', url: 'https://anbk.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
+      { id: 'def-40', category: 'Daerah', title: 'Dinas Pendidikan Makassar', url: 'https://disdik.makassarkota.go.id', icon: 'city', isCustom: false },
+      { id: 'def-41', category: 'Daerah', title: 'Makan Bergizi Gratis (MBG)', url: 'https://mbg.pdm.kemendikdasmen.go.id/portal', icon: 'utensils', isCustom: false },
+      { id: 'def-42', category: 'Daerah', title: 'Portal PPDB Makassar', url: 'https://spmb.makassarkota.go.id/cloginsekolahx', icon: 'city', isCustom: false },
+      { id: 'def-43', category: 'Utilitas', title: 'cekip.com', url: 'https://cekip.com/', icon: 'globe', isCustom: false },
+      { id: 'def-44', category: 'Utilitas', title: 'Speedtest', url: 'https://www.speedtest.net/', icon: 'gauge', isCustom: false },
+      { id: 'def-45', category: 'Utilitas', title: 'TinyPNG', url: 'https://tinypng.com/', icon: 'image', isCustom: false },
+      { id: 'def-46', category: 'Utilitas', title: 'WhatsApp Web', url: 'https://web.whatsapp.com/', icon: 'comments', isCustom: false }
     ];
 
     const iconList = [
@@ -723,6 +660,7 @@
       } catch (error) { return fallback; }
     }
 
+    // Fungsi penyimpanan aman klien
     function safeLocalStorageSet(key, value) {
       try {
         localStorage.setItem(key, JSON.stringify(value));
@@ -830,8 +768,11 @@
       const container = document.getElementById('links-container');
       container.innerHTML = '';
 
+      // Proteksi tambahan (Optional Chaining) untuk mencegah crash rendering jika ada field links kosong
       const filtered = links.filter(item => {
-        return item.title.toLowerCase().includes(currentSearchQuery) || item.url.toLowerCase().includes(currentSearchQuery);
+        const titleMatch = item && item.title ? item.title.toLowerCase().includes(currentSearchQuery) : false;
+        const urlMatch = item && item.url ? item.url.toLowerCase().includes(currentSearchQuery) : false;
+        return titleMatch || urlMatch;
       });
 
       if (filtered.length === 0) {
@@ -911,7 +852,6 @@
         closeResetLinksModal();
         closeCustomAlert();
         closeConfirmResetModal();
-        closePWARequestModal();
       }
     });
 
@@ -927,7 +867,8 @@
     function clearModalInputs() {
       document.getElementById('link-title').value = '';
       document.getElementById('link-url').value = '';
-      document.getElementById('selected-icon-class').value = 'link';
+      // Fix Sinkronisasi Visual: Setel default ikon ke yang pertama di daftar rendering (laptop) agar tidak mismatch
+      document.getElementById('selected-icon-class').value = iconList[0];
       renderIconPicker();
     }
 
@@ -1213,15 +1154,15 @@
 
       if (isStandalone || wasInstalled) {
         container.innerHTML = `
-          <div class="h-9 sm:h-11 px-2.5 sm:px-4 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-xl sm:rounded-2xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold shadow-sm animate-fadeIn" title="Aplikasi DAPO-HUB Aktif & Terpasang">
-            <span class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 animate-pulse"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
+          <div class="h-8 sm:h-9 px-2 sm:px-3 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg sm:rounded-xl flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-bold shadow-sm animate-fadeIn" title="Aplikasi DAPO-HUB Aktif & Terpasang">
+            <span class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500 animate-pulse"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></span>
             <span class="hidden md:inline">Aplikasi Terpasang</span>
           </div>
         `;
       } else {
         container.innerHTML = `
-          <button id="btn-install-pwa" onclick="installPWA()" class="h-9 sm:h-11 px-2.5 sm:px-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-[10px] sm:text-xs font-extrabold rounded-xl sm:rounded-2xl shadow-md shadow-emerald-500/20 transition-all flex items-center justify-center gap-1.5 sm:gap-2 animate-fadeIn" title="Instal Aplikasi ke Perangkat">
-            <span class="w-3.5 h-3.5 sm:w-4 sm:h-4"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5"></path></svg></span>
+          <button id="btn-install-pwa" onclick="installPWA()" class="h-8 sm:h-9 px-2 sm:px-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white text-[9px] sm:text-[11px] font-extrabold rounded-lg sm:rounded-xl shadow-md shadow-emerald-500/20 transition-all flex items-center justify-center gap-1 sm:gap-1.5 animate-fadeIn" title="Instal Aplikasi ke Perangkat">
+            <span class="w-3 h-3 sm:w-3.5 sm:h-3.5"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5"></path></svg></span>
             <span class="hidden sm:inline">Pasang DAPO-HUB</span>
           </button>
         `;
@@ -1253,53 +1194,7 @@
           deferredPrompt = null;
         });
       } else {
-        openPWARequestModal();
-      }
-    }
-
-    async function runPWADiagnostics() {
-      const diagSw = document.getElementById('diag-sw-status');
-      const diagHttps = document.getElementById('diag-https-status');
-      
-      if (diagSw) diagSw.innerHTML = `Mengecek...`;
-      
-      const isHttps = window.location.protocol === 'https:';
-      if (diagHttps) {
-        diagHttps.innerHTML = isHttps ? `Aktif` : `Tidak Aman (HTTP)`;
-        diagHttps.className = isHttps ? 'font-bold text-emerald-600 flex items-center gap-1' : 'font-bold text-rose-600 flex items-center gap-1';
-      }
-
-      if (diagSw) {
-        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-          diagSw.innerHTML = `Terdaftar & Aktif`;
-          diagSw.className = 'font-bold text-emerald-600 flex items-center gap-1';
-        } else {
-          diagSw.innerHTML = `Siap di Server Standar`;
-          diagSw.className = 'font-bold text-amber-600 flex items-center gap-1';
-        }
-      }
-    }
-
-    function openPWARequestModal() {
-      const modal = document.getElementById('pwa-diagnostic-modal');
-      const content = document.getElementById('pwa-diag-content');
-      if (modal && content) {
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-          content.classList.remove('scale-95', 'opacity-0');
-          content.classList.add('scale-100', 'opacity-100');
-        }, 50);
-        runPWADiagnostics();
-      }
-    }
-
-    function closePWARequestModal() {
-      const modal = document.getElementById('pwa-diagnostic-modal');
-      const content = document.getElementById('pwa-diag-content');
-      if (modal && content) {
-        content.classList.remove('scale-100', 'opacity-100');
-        content.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        showCustomAlert("Panduan Instalasi", "Untuk menginstal di HP, silakan buka menu browser Anda (ikon tiga titik/bagikan) lalu pilih 'Tambahkan ke Layar Utama' atau 'Instal aplikasi'.", true);
       }
     }
 
@@ -1332,7 +1227,7 @@
     }
 
     function triggerManualSync() {
-      if (!navigator.onLine) return showCustomAlert("Mode Luring Aktif", "Anda saat ini sedang luring. Sinkronisasi ditunda, namun seluruh data lokal Anda tetap aman.", false);
+      if (!navigator.onLine) return showCustomAlert("Mode Luring Hack", "Anda saat ini sedang luring. Sinkronisasi ditunda, namun seluruh data lokal Anda tetap aman.", false);
       
       const btnIcon = document.getElementById('btn-sync-icon'), btnText = document.getElementById('btn-sync-text'), btn = document.getElementById('btn-manual-sync');
       btn.disabled = true; 
@@ -1344,7 +1239,7 @@
         btn.disabled = false; 
         if (btnIcon) btnIcon.querySelector('svg').classList.remove('animate-spin');
         btnText.textContent = "Sinkronkan"; 
-        showCustomAlert("Sinkronisasi Sukses", "Seluruh data lokal telah divalidasi ke lokal browser.", true); 
+        showCustomAlert("Sinkronisasi Sukses", "Seluruh data lokal telah divalidasi di lokal browser.", true); 
       }, 1500);
     }
 
