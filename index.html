@@ -91,11 +91,11 @@
       <span class="w-5 h-5 flex-shrink-0 text-white animate-bounce">
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.204 12a14.945 14.945 0 011.085-3.036M12 21a8.966 8.966 0 01-5.912-2.203m11.824 0A8.964 8.964 0 0012 3v1m0 0a8.963 8.963 0 013.912 1.203M12 3a8.964 8.964 0 00-3.912 1.203m7.824 0a14.948 14.948 0 011.085 3.036M1 1l22 22"></path></svg>
       </span>
-      <span>Koneksi terputus. Anda sedang menggunakan mode luring (offline). Beberapa data kustom tetap dapat diakses secara lokal.</span>
+      <span>Koneksi terputus atau tidak stabil. Anda sedang menggunakan mode luring (offline). Beberapa data kustom tetap dapat diakses secara lokal.</span>
     </div>
   </div>
 
-  <!-- HEADER UTAMA RESPONSIVE & ANTI-LUBER -->
+  <!-- HEADER UTAMA RESPONSIVE -->
   <header class="sticky top-0 z-40 w-full custom-glass border-b border-slate-200/80 shadow-sm">
     <div class="max-w-[1920px] mx-auto px-3 sm:px-6 lg:px-8 min-h-[3.5rem] sm:min-h-[3.75rem] py-1.5 sm:py-0 flex items-center justify-between gap-2">
       
@@ -263,20 +263,20 @@
               </div>
             </div>
 
-            <div>
+            <div class="min-w-0 flex-1">
               <div class="flex items-center gap-1.5 flex-wrap">
-                <h3 id="profile-name-display" class="font-bold text-slate-800 text-lg leading-tight">Nama Operator</h3>
-                <span id="setup-pulse-badge" class="hidden text-[9px] bg-amber-100 text-amber-800 border border-amber-200 font-black px-1.5 py-0.5 rounded-md animate-pulse">Belum Diatur</span>
+                <h3 id="profile-name-display" class="font-bold text-slate-800 text-lg leading-tight truncate max-w-full">Nama Operator</h3>
+                <span id="setup-pulse-badge" class="hidden text-[9px] bg-amber-100 text-amber-800 border border-amber-200 font-black px-1.5 py-0.5 rounded-md animate-pulse flex-shrink-0">Belum Diatur</span>
               </div>
-              <p id="profile-role-display" class="text-xs text-slate-500 font-semibold mt-0.5">Administrator Utama</p>
-              <p id="profile-school-display" class="text-xs text-brand-600 font-bold mt-1 bg-brand-50 px-2.5 py-0.5 rounded-lg inline-block">Sekolah Integrasi Anda</p>
+              <p id="profile-role-display" class="text-xs text-slate-500 font-semibold mt-0.5 truncate">Administrator Utama</p>
+              <p id="profile-school-display" class="text-xs text-brand-600 font-bold mt-1 bg-brand-50 px-2.5 py-0.5 rounded-lg inline-block truncate max-w-full">Sekolah Integrasi Anda</p>
               
               <!-- MOTTO PROFIL OPERATOR -->
               <div class="mt-2.5 text-[11px] text-slate-500 italic font-medium flex items-center gap-1.5 bg-slate-50/80 px-2 py-1.5 rounded-xl border border-slate-100">
                 <span class="w-3.5 h-3.5 text-brand-400 flex-shrink-0">
                   <svg fill="currentColor" viewBox="0 0 24 24" class="w-full h-full"><path d="M11.192 15.757c0-.907-.188-1.754-.565-2.54a6.685 6.685 0 00-1.624-2.115c.104-.61.352-1.196.744-1.757.393-.562.912-1.077 1.558-1.547l-.847-1.312C8.347 8.027 6.64 9.941 5.343 12.238c-1.296 2.296-1.944 4.414-1.944 6.353 0 1.25.32 2.222.959 2.918.64.696 1.524 1.044 2.653 1.044 1.13 0 2.021-.341 2.673-1.023.652-.682.978-1.602.978-2.759 0-1.156-.319-2.062-.958-2.718-.64-.656-1.524-.984-2.653-.984l-.113.016c.381-1.06 1.054-2.016 2.016-2.864.962-.847 1.93-1.432 2.905-1.754l-.444-1.129c-.792.234-1.58.634-2.366 1.2a11.192 11.192 0 00-2.348 2.348l-.065.097c.56.096 1.01.328 1.348.694.339.366.508.847.508 1.444zm11 0c0-.907-.188-1.754-.565-2.54a6.685 6.685 0 00-1.624-2.115c.104-.61.352-1.196.744-1.757.393-.562.912-1.077 1.558-1.547l-.847-1.312c-2.113 1.54-3.82 3.454-5.117 5.751-1.296 2.296-1.944 4.414-1.944 6.353 0 1.25.32 2.222.959 2.918.64.696 1.524 1.044 2.653 1.044 1.13 0 2.021-.341 2.673-1.023.652-.682.978-1.602.978-2.759 0-1.156-.319-2.062-.958-2.718-.64-.656-1.524-.984-2.653-.984l-.113.016c.381-1.06 1.054-2.016 2.016-2.864.962-.847 1.93-1.432 2.905-1.754l-.444-1.129c-.792.234-1.58.634-2.366 1.2a11.192 11.192 0 00-2.348 2.348l-.065.097c.56.096 1.01.328 1.348.694.339.366.508.847.508 1.444z"/></svg>
                 </span>
-                <span id="profile-motto-display">Sedikit bicara banyak kerjaannya</span>
+                <span id="profile-motto-display" class="truncate">Sedikit bicara banyak kerjaannya</span>
               </div>
             </div>
           </div>
@@ -411,7 +411,7 @@
   <!-- MODALS SYSTEM -->
   <!-- MODAL EDIT PROFIL OPERATOR -->
   <div id="edit-profile-form" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-300 opacity-0 " id="edit-profile-modal-content">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-300 opacity-0" id="edit-profile-modal-content">
       <div class="flex items-center justify-between pb-4 border-b border-slate-100">
         <h3 class="text-lg font-extrabold text-slate-800 text-outfit flex items-center gap-2">
           <span class="w-5 h-5 text-brand-500"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.43l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.991l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.28z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></span>
@@ -436,7 +436,7 @@
 
   <!-- MODAL TAMBAH TAUTAN KUSTOM -->
   <div id="custom-link-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-300 opacity-0 " id="modal-content">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 transform scale-95 transition-all duration-300 opacity-0" id="modal-content">
       <div class="flex items-center justify-between pb-4 border-b border-slate-100">
         <h3 class="text-lg font-extrabold text-slate-800 text-outfit flex items-center gap-2">
           <span class="w-5 h-5 text-brand-500"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"></path></svg></span>
@@ -576,7 +576,7 @@
                 _0xb1c2.innerHTML = `&copy; 2026 <strong>DAPO-HUB Portal</strong>. Didesain oleh <strong class="text-brand-600">${_0x3c4d}</strong> - ${_0x5e6f}.`;
             }
             
-            // Mekanisme Proteksi Keaslian Kode Ciptaan (Anti Autotranslate False Alarm)
+            // Mekanisme Proteksi Keaslian Kode Ciptaan
             setInterval(() => {
                 const _0xd3e4 = document.getElementById('dev-credit');
                 if(!_0xd3e4 || !_0xd3e4.hasAttribute('data-verified')) {
@@ -590,6 +590,7 @@
     let links = [];
     let currentDeleteId = null;
     let deferredPrompt = null; 
+    let isCurrentlyOnline = true; // State manajemen status jaringan global
     
     // Setelan default yang ramah bagi sekolah mana pun
     const DEFAULT_SCHOOL = "Sekolah Integrasi Anda";
@@ -597,68 +598,69 @@
     const DEFAULT_NAME = "Nama Operator";
     const DEFAULT_MOTTO = "Sedikit bicara banyak kerjaannya";
 
-    // TAUTAN BAWAAN DIURUTKAN SECARA ALFABETIS DI DALAM KATEGORI MASING-MASING (BUG 3 FIXED)
+    // TAUTAN BAWAAN DIURUTKAN SECARA ALFABETIS DI DALAM KATEGORI MASING-MASING
+    // PERBAIKAN: Memastikan pemetaan ID def-44, def-45, def-46 unik dan tidak tumpang tindih
     const defaultLinks = [
       // === KATEGORI UTAMA ===
-      { id: 'def-26', category: 'Utama', title: 'Akun Belajar.id', url: 'https://belajar.id', icon: 'chalkboard-user', isCustom: false },
-      { id: 'def-1', category: 'Utama', title: 'Aplikasi Dapodik Lokal', url: 'http://localhost:5774', icon: 'laptop', isCustom: false },
-      { id: 'def-2', category: 'Utama', title: 'Beranda Dapodik', url: 'https://dapo.kemendikdasmen.go.id', icon: 'globe', isCustom: false },
-      { id: 'def-3', category: 'Utama', title: 'DIGI-DitSMP Kemendikdasmen', url: 'https://digi-ditsmp.kemendikdasmen.go.id/', icon: 'desktop', isCustom: false },
-      { id: 'def-4', category: 'Utama', title: 'JDIH Kemendikdasmen', url: 'https://jdih.kemendikdasmen.go.id/', icon: 'gavel', isCustom: false },
-      { id: 'def-28', category: 'Utama', title: 'KBBI Daring Kemendikdasmen', url: 'https://kbbi.kemendikdasmen.go.id/', icon: 'spell-check', isCustom: false },
-      { id: 'def-5', category: 'Utama', title: 'Pendaftaran Lomba (BPTI)', url: 'https://daftar-bpti.kemendikdasmen.go.id', icon: 'trophy', isCustom: false },
-      { id: 'def-6', category: 'Utama', title: 'PTK Datadik', url: 'https://ptk.datadik.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
-      { id: 'def-7', category: 'Utama', title: 'Pusat Kurikulum', url: 'https://kurikulum.kemendikdasmen.go.id/', icon: 'book-open', isCustom: false },
-      { id: 'def-8', category: 'Utama', title: 'Rapor Pendidikan Kemendikdasmen', url: 'https://raporpendidikan.kemendikdasmen.go.id', icon: 'globe', isCustom: false },
-      { id: 'def-9', category: 'Utama', title: 'SP Datadik Satuan Pendidikan', url: 'https://sp.datadik.kemendikdasmen.go.id/', icon: 'school-flag', isCustom: false },
-      { id: 'def-10', category: 'Utama', title: 'Unduh Prefill Dapodik', url: 'https://prefill2.kemendikdasmen.go.id/', icon: 'database', isCustom: false },
-      { id: 'def-11', category: 'Utama', title: 'Unduhan Aplikasi Dapodik', url: 'https://dapo.kemendikdasmen.go.id/unduhan', icon: 'database', isCustom: false },
+      { id: 'def-01', category: 'Utama', title: 'Akun Belajar.id', url: 'https://belajar.id', icon: 'chalkboard-user', isCustom: false },
+      { id: 'def-02', category: 'Utama', title: 'Aplikasi Dapodik Lokal', url: 'http://localhost:5774', icon: 'laptop', isCustom: false },
+      { id: 'def-03', category: 'Utama', title: 'Beranda Dapodik', url: 'https://dapo.kemendikdasmen.go.id', icon: 'globe', isCustom: false },
+      { id: 'def-04', category: 'Utama', title: 'DIGI-DitSMP Kemendikdasmen', url: 'https://digi-ditsmp.kemendikdasmen.go.id/', icon: 'desktop', isCustom: false },
+      { id: 'def-05', category: 'Utama', title: 'JDIH Kemendikdasmen', url: 'https://jdih.kemendikdasmen.go.id/', icon: 'gavel', isCustom: false },
+      { id: 'def-06', category: 'Utama', title: 'KBBI Daring Kemendikdasmen', url: 'https://kbbi.kemendikdasmen.go.id/', icon: 'spell-check', isCustom: false },
+      { id: 'def-07', category: 'Utama', title: 'Pendaftaran Lomba (BPTI)', url: 'https://daftar-bpti.kemendikdasmen.go.id', icon: 'trophy', isCustom: false },
+      { id: 'def-08', category: 'Utama', title: 'PTK Datadik', url: 'https://ptk.datadik.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
+      { id: 'def-09', category: 'Utama', title: 'Pusat Kurikulum', url: 'https://kurikulum.kemendikdasmen.go.id/', icon: 'book-open', isCustom: false },
+      { id: 'def-10', category: 'Utama', title: 'Rapor Pendidikan Kemendikdasmen', url: 'https://raporpendidikan.kemendikdasmen.go.id', icon: 'globe', isCustom: false },
+      { id: 'def-11', category: 'Utama', title: 'SP Datadik Satuan Pendidikan', url: 'https://sp.datadik.kemendikdasmen.go.id/', icon: 'school-flag', isCustom: false },
+      { id: 'def-12', category: 'Utama', title: 'Unduh Prefill Dapodik', url: 'https://prefill2.kemendikdasmen.go.id/', icon: 'database', isCustom: false },
+      { id: 'def-13', category: 'Utama', title: 'Unduhan Aplikasi Dapodik', url: 'https://dapo.kemendikdasmen.go.id/unduhan', icon: 'database', isCustom: false },
 
       // === KATEGORI VERIFIKASI ===
-      { id: 'def-12', category: 'Verifikasi', title: 'Cek NISN Mandiri', url: 'https://nisn.data.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
-      { id: 'def-13', category: 'Verifikasi', title: 'Cek NUPTK GTK', url: 'https://gtk.data.kemendikdasmen.go.id/', icon: 'id-card', isCustom: false },
-      { id: 'def-14', category: 'Verifikasi', title: 'Manajemen / Verval Ijazah (SIVIL)', url: 'https://ijazah.data.kemendikdasmen.go.id/manajemen/#/sign-in', icon: 'graduation-cap', isCustom: false },
-      { id: 'def-15', category: 'Verifikasi', title: 'Pusdatin PD', url: 'https://pd.data.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
-      { id: 'def-16', category: 'Verifikasi', title: 'SDM Data Kemendikdasmen', url: 'https://sdm.data.kemendikdasmen.go.id/', icon: 'user-shield', isCustom: false },
-      { id: 'def-17', category: 'Verifikasi', title: 'Verval PD (Peserta Didik)', url: 'https://vervalpd.data.kemendikdasmen.go.id/', icon: 'id-card', isCustom: false },
-      { id: 'def-18', category: 'Verifikasi', title: 'Verval PTK', url: 'https://vervalptk.data.kemendikdasmen.go.id/site/login', icon: 'id-card', isCustom: false },
-      { id: 'def-19', category: 'Verifikasi', title: 'Verval SP (Satuan Pendidikan)', url: 'https://vervalsp.data.kemendikdasmen.go.id/verval/index.php/cberanda/index/', icon: 'globe', isCustom: false },
-      { id: 'def-20', category: 'Verifikasi', title: 'Verval TIK', url: 'https://vervaltio.data.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
+      { id: 'def-14', category: 'Verifikasi', title: 'Cek NISN Mandiri', url: 'https://nisn.data.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
+      { id: 'def-15', category: 'Verifikasi', title: 'Cek NUPTK GTK', url: 'https://gtk.data.kemendikdasmen.go.id/', icon: 'id-card', isCustom: false },
+      { id: 'def-16', category: 'Verifikasi', title: 'Manajemen / Verval Ijazah (SIVIL)', url: 'https://ijazah.data.kemendikdasmen.go.id/manajemen/#/sign-in', icon: 'graduation-cap', isCustom: false },
+      { id: 'def-17', category: 'Verifikasi', title: 'Pusdatin PD', url: 'https://pd.data.kemendikdasmen.go.id', icon: 'id-card', isCustom: false },
+      { id: 'def-18', category: 'Verifikasi', title: 'SDM Data Kemendikdasmen', url: 'https://sdm.data.kemendikdasmen.go.id/', icon: 'user-shield', isCustom: false },
+      { id: 'def-19', category: 'Verifikasi', title: 'Verval PD (Peserta Didik)', url: 'https://vervalpd.data.kemendikdasmen.go.id/', icon: 'id-card', isCustom: false },
+      { id: 'def-20', category: 'Verifikasi', title: 'Verval PTK', url: 'https://vervalptk.data.kemendikdasmen.go.id/site/login', icon: 'id-card', isCustom: false },
+      { id: 'def-21', category: 'Verifikasi', title: 'Verval SP (Satuan Pendidikan)', url: 'https://vervalsp.data.kemendikdasmen.go.id/verval/index.php/cberanda/index/', icon: 'globe', isCustom: false },
+      { id: 'def-22', category: 'Verifikasi', title: 'Verval TIK', url: 'https://vervaltio.data.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
 
       // === KATEGORI KEUANGAN ===
-      { id: 'def-21', category: 'Keuangan', title: 'ARKAS Kemendikdasmen', url: 'https://arkas.kemendikdasmen.go.id', icon: 'wallet', isCustom: false },
-      { id: 'def-22', category: 'Keuangan', title: 'BOSP Salur', url: 'https://bosp.kemendikdasmen.go.id', icon: 'wallet', isCustom: false },
-      { id: 'def-23', category: 'Keuangan', title: 'Coretax DJP Pajak', url: 'https://coretaxdjp.pajak.go.id/identityproviderportal/Account/Login', icon: 'receipt', isCustom: false },
-      { id: 'def-24', category: 'Keuangan', title: 'Sipintar PIP', url: 'https://pip.kemendikdasmen.go.id/home_v1', icon: 'wallet', isCustom: false },
-      { id: 'def-25', category: 'Keuangan', title: 'SIPLah', url: 'https://siplah.blibli.com/', icon: 'cart-shopping', isCustom: false },
-      { id: 'def-47', category: 'Keuangan', title: 'SIPLah Toko Ladang', url: 'https://siplah.tokoladang.co.id/', icon: 'cart-shopping', isCustom: false },
+      { id: 'def-23', category: 'Keuangan', title: 'ARKAS Kemendikdasmen', url: 'https://arkas.kemendikdasmen.go.id', icon: 'wallet', isCustom: false },
+      { id: 'def-24', category: 'Keuangan', title: 'BOSP Salur', url: 'https://bosp.kemendikdasmen.go.id', icon: 'wallet', isCustom: false },
+      { id: 'def-25', category: 'Keuangan', title: 'Coretax DJP Pajak', url: 'https://coretaxdjp.pajak.go.id/identityproviderportal/Account/Login', icon: 'receipt', isCustom: false },
+      { id: 'def-26', category: 'Keuangan', title: 'Sipintar PIP', url: 'https://pip.kemendikdasmen.go.id/home_v1', icon: 'wallet', isCustom: false },
+      { id: 'def-27', category: 'Keuangan', title: 'SIPLah', url: 'https://siplah.blibli.com/', icon: 'cart-shopping', isCustom: false },
+      { id: 'def-28', category: 'Keuangan', title: 'SIPLah Toko Ladang', url: 'https://siplah.tokoladang.co.id/', icon: 'cart-shopping', isCustom: false },
       
       // === KATEGORI SERTIFIKASI ===
-      { id: 'def-27', category: 'Sertifikasi', title: 'Info GTK', url: 'https://info.gtk.kemendikdasmen.go.id/', icon: 'chalkboard-user', isCustom: false },
-      { id: 'def-29', category: 'Sertifikasi', title: 'Ruang GTK', url: 'https://akun.pendidikan.go.id/login?flow=fa87d033-975e-48c1-8315-b75b0be1dfb2', icon: 'chalkboard-user', isCustom: false },
-      { id: 'def-30', category: 'Sertifikasi', title: 'Rumah Belajar', url: 'https://rumah.pendidikan.go.id/', icon: 'school-flag', isCustom: false },
-      { id: 'def-31', category: 'Sertifikasi', title: 'SIMPKB Login', url: 'https://paspor-gtk.simpkb.id/casgpo/login?service=https%3A%2F%2Fapp.simpkb.id%2Fauth%2Flogin', icon: 'chalkboard-user', isCustom: false },
+      { id: 'def-29', category: 'Sertifikasi', title: 'Info GTK', url: 'https://info.gtk.kemendikdasmen.go.id/', icon: 'chalkboard-user', isCustom: false },
+      { id: 'def-30', category: 'Sertifikasi', title: 'Ruang GTK', url: 'https://akun.pendidikan.go.id/login?flow=fa87d033-975e-48c1-8315-b75b0be1dfb2', icon: 'chalkboard-user', isCustom: false },
+      { id: 'def-31', category: 'Sertifikasi', title: 'Rumah Belajar', url: 'https://rumah.pendidikan.go.id/', icon: 'school-flag', isCustom: false },
+      { id: 'def-32', category: 'Sertifikasi', title: 'SIMPKB Login', url: 'https://paspor-gtk.simpkb.id/casgpo/login?service=https%3A%2F%2Fapp.simpkb.id%2Fauth%2Flogin', icon: 'chalkboard-user', isCustom: false },
 
       // === KATEGORI KEPEGAWAIAN ===
-      { id: 'def-32', category: 'Kepegawaian', title: 'e-Kinerja BKN', url: 'https://kinerja.bkn.go.id', icon: 'chalkboard-user', isCustom: false },
+      { id: 'def-33', category: 'Kepegawaian', title: 'e-Kinerja BKN', url: 'https://kinerja.bkn.go.id', icon: 'chalkboard-user', isCustom: false },
       { id: 'def-34', category: 'Kepegawaian', title: 'MyASN BKN', url: 'https://myasn.bkn.go.id', icon: 'id-card', isCustom: false },
       { id: 'def-35', category: 'Kepegawaian', title: 'SIMPEG Kemendikdasmen', url: 'https://simpeg.bkpsdmd.makassarkota.go.id/', icon: 'id-card', isCustom: false },
 
       // === KATEGORI UJIAN ===
-      { id: 'def-37', category: 'Ujian', title: 'Bio-AN SMP', url: 'https://bioportal.kemendikdasmen.go.id/auth/login', icon: 'id-card', isCustom: false },
-      { id: 'def-38', category: 'Ujian', title: 'Portal TKA & Asesmen Bakat', url: 'https://tka.kemendikdasmen.go.id/', icon: 'computer', isCustom: false },
-      { id: 'def-39', category: 'Ujian', title: 'Portal Web ANBK', url: 'https://anbk.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
+      { id: 'def-36', category: 'Ujian', title: 'Bio-AN SMP', url: 'https://bioportal.kemendikdasmen.go.id/auth/login', icon: 'id-card', isCustom: false },
+      { id: 'def-37', category: 'Ujian', title: 'Portal TKA & Asesmen Bakat', url: 'https://tka.kemendikdasmen.go.id/', icon: 'computer', isCustom: false },
+      { id: 'def-38', category: 'Ujian', title: 'Portal Web ANBK', url: 'https://anbk.kemendikdasmen.go.id', icon: 'computer', isCustom: false },
 
       // === KATEGORI DAERAH ===
-      { id: 'def-40', category: 'Daerah', title: 'Dinas Pendidikan Makassar', url: 'https://disdik.makassarkota.go.id', icon: 'city', isCustom: false },
-      { id: 'def-41', category: 'Daerah', title: 'Makan Bergizi Gratis (MBG)', url: 'https://mbg.pdm.kemendikdasmen.go.id/portal', icon: 'utensils', isCustom: false },
-      { id: 'def-42', category: 'Daerah', title: 'Portal PPDB Makassar', url: 'https://spmb.makassarkota.go.id/', icon: 'city', isCustom: false },
+      { id: 'def-39', category: 'Daerah', title: 'Dinas Pendidikan Makassar', url: 'https://disdik.makassarkota.go.id', icon: 'city', isCustom: false },
+      { id: 'def-40', category: 'Daerah', title: 'Makan Bergizi Gratis (MBG)', url: 'https://mbg.pdm.kemendikdasmen.go.id/portal', icon: 'utensils', isCustom: false },
+      { id: 'def-41', category: 'Daerah', title: 'Portal PPDB Makassar', url: 'https://spmb.makassarkota.go.id/', icon: 'city', isCustom: false },
 
       // === KATEGORI UTILITAS ===
-      { id: 'def-43', category: 'Utilitas', title: 'cekip.com', url: 'https://cekip.com/', icon: 'globe', isCustom: false },
-      { id: 'def-44', category: 'Utilitas', title: 'Speedtest', url: 'https://www.speedtest.net/', icon: 'gauge', isCustom: false },
-      { id: 'def-45', category: 'Utilitas', title: 'TinyPNG', url: 'https://tinypng.com/', icon: 'image', isCustom: false },
-      { id: 'def-46', category: 'Utilitas', title: 'WhatsApp Web', url: 'https://web.whatsapp.com/', icon: 'comments', isCustom: false }
+      { id: 'def-42', category: 'Utilitas', title: 'cekip.com', url: 'https://cekip.com/', icon: 'globe', isCustom: false },
+      { id: 'def-43', category: 'Utilitas', title: 'Speedtest', url: 'https://www.speedtest.net/', icon: 'gauge', isCustom: false },
+      { id: 'def-44', category: 'Utilitas', title: 'TinyPNG', url: 'https://tinypng.com/', icon: 'image', isCustom: false },
+      { id: 'def-45', category: 'Utilitas', title: 'WhatsApp Web', url: 'https://web.whatsapp.com/', icon: 'comments', isCustom: false }
     ];
 
     const iconList = [
@@ -783,7 +785,6 @@
       const container = document.getElementById('links-container');
       container.innerHTML = '';
 
-      // Proteksi tambahan (Optional Chaining) untuk mencegah crash rendering jika ada field links kosong
       const filtered = links.filter(item => {
         const titleMatch = item && item.title ? item.title.toLowerCase().includes(currentSearchQuery) : false;
         const urlMatch = item && item.url ? item.url.toLowerCase().includes(currentSearchQuery) : false;
@@ -882,7 +883,6 @@
     function clearModalInputs() {
       document.getElementById('link-title').value = '';
       document.getElementById('link-url').value = '';
-      // Fix Sinkronisasi Visual: Setel default ikon ke yang pertama di daftar rendering (laptop) agar tidak mismatch
       document.getElementById('selected-icon-class').value = iconList[0];
       renderIconPicker();
     }
@@ -926,7 +926,6 @@
       currentDeleteId = id; document.getElementById('delete-link-modal').classList.remove('hidden');
     }
 
-    // Fungsi menghapus memo catatan secara eksplisit
     function deleteMemo() {
       try {
         localStorage.removeItem(`dapohub_memo_${selectedDateKey}`);
@@ -1049,7 +1048,7 @@
 
     function toggleAgendaComplete(index) {
       const agendas = safeLocalStorageGet('dapohub_agendas', []);
-      if (!agendas[index]) return; // Proteksi batas aman array
+      if (!agendas[index]) return; 
       if (typeof agendas[index] === 'string') agendas[index] = { text: agendas[index], completed: true }; else agendas[index].completed = !agendas[index].completed;
       if (safeLocalStorageSet('dapohub_agendas', agendas)) renderAgenda();
     }
@@ -1072,7 +1071,6 @@
       calendarDate.setMonth(calendarDate.getMonth() + step);
       const today = new Date();
       
-      // Sinkronisasi state selectedDateKey dengan bulan baru yang diklik
       selectedDateKey = (calendarDate.getFullYear() === today.getFullYear() && calendarDate.getMonth() === today.getMonth()) ? formatDateKey(today) : formatDateKey(calendarDate);
       
       const parts = selectedDateKey.split('-');
@@ -1082,7 +1080,7 @@
       
       document.getElementById('selected-date-label').textContent = `Catatan Tanggal: ${d} ${monthNames[m - 1]} ${y}`;
       renderCalendar(); 
-      loadMemoForSelectedDate(); // Memastikan catatan baru langsung dipindah/dimuat saat ganti bulan
+      loadMemoForSelectedDate(); 
     }
 
     function renderCalendar() {
@@ -1091,12 +1089,10 @@
       document.getElementById('calendar-month-year').textContent = `${monthNames[month]} ${year}`;
       
       const firstDayIndex = new Date(year, month, 1).getDay(); 
-      // Mengubah kalkulasi offset Senin-Minggu agar kompatibel di semua browser secara presisi
       const adjustedFirstDay = firstDayIndex === 0 ? 6 : firstDayIndex - 1;
       
       const totalDays = new Date(year, month + 1, 0).getDate();
       
-      // Menggunakan div kosong berukuran tetap agar layout grid tidak kolaps saat rendering placeholder
       for (let i = 0; i < adjustedFirstDay; i++) {
         const spacer = document.createElement('div');
         spacer.className = 'w-8 h-8 mx-auto';
@@ -1119,7 +1115,6 @@
         cell.className = `w-8 h-8 mx-auto rounded-xl flex flex-col items-center justify-center text-xs font-bold transition-all relative ${isSelected ? 'bg-brand-600 text-white shadow-md shadow-brand-500/25 scale-105' : isToday ? 'bg-slate-900 text-white' : loopDate.getDay() === 0 ? 'hover:bg-rose-50 text-rose-500' : 'hover:bg-slate-100 text-slate-700'}`;
         cell.innerHTML = `<span>${day}</span>${hasMemo ? `<span class="absolute bottom-1 w-1 h-1 rounded-full ${isSelected ? 'bg-white' : 'bg-brand-500'}"></span>` : ''}`;
         
-        // Memperbaiki perpindahan catatan memo secara reaktif saat mengklik tanggal di kalender
         cell.onclick = () => { 
           selectedDateKey = dateKey; 
           document.getElementById('selected-date-label').textContent = `Catatan Tanggal: ${day} ${monthNames[month]} ${year}`; 
@@ -1131,7 +1126,6 @@
     }
 
     function loadMemoForSelectedDate() { 
-      // Membaca memo dari LocalStorage menggunakan key tanggal terpilih secara real-time (BUG 1 FIXED)
       const memoInput = document.getElementById('memo-input');
       const deleteBtn = document.getElementById('btn-delete-memo');
       let hasMemo = "";
@@ -1145,7 +1139,6 @@
         memoInput.value = hasMemo || ''; 
       }
       
-      // Tampilkan atau sembunyikan tombol Hapus secara interaktif
       if (deleteBtn) {
         if (hasMemo) {
           deleteBtn.classList.remove('hidden');
@@ -1169,17 +1162,15 @@
         console.warn("Gagal menyimpan memo karena batasan mode privat:", e.message);
       }
       
-      // Memberikan feedback visual berupa hilangnya fokus kursor
       memoInput.blur();
       
-      // Memberikan efek kilas visual bahwa data sukses tersimpan ke memori
       memoInput.classList.add('bg-emerald-50', 'border-emerald-300');
       setTimeout(() => {
         memoInput.classList.remove('bg-emerald-50', 'border-emerald-300');
       }, 600);
 
       renderCalendar(); 
-      loadMemoForSelectedDate(); // Refresh UI termasuk kondisi visibilitas tombol Hapus
+      loadMemoForSelectedDate(); 
       showCustomAlert("Catatan Tersimpan", "Memo untuk tanggal terpilih berhasil diperbarui.");
     }
 
@@ -1242,9 +1233,46 @@
       showCustomAlert("Aplikasi Terinstal", "DAPO-HUB berhasil dipasang pada perangkat Anda!", true);
     });
 
-    function updateOnlineStatus() {
-      const isOnline = navigator.onLine;
-      const banner = document.getElementById('offline-banner'); if (banner) banner.classList.toggle('hidden', isOnline);
+    // SISTEM PENDETEKSI JARINGAN GANDA (PASSIVE & ACTIVE HEARTBEAT PING)
+    // Digunakan untuk menangani masalah ketidakakuratan navigator.onLine pada laptop/desktop.
+    async function checkNetworkStatus() {
+      const prevStatus = isCurrentlyOnline;
+      let statusPassed = navigator.onLine;
+
+      if (statusPassed) {
+        // Lakukan pengujian ping aktif dengan timeout sangat singkat (3 detik)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
+        
+        try {
+          // Melakukan request ringan ke favicon atau endpoint tepercaya
+          const response = await fetch("https://cdn-icons-png.flaticon.com/512/2210/2210143.png", { 
+            method: "HEAD", 
+            mode: "no-cors",
+            cache: "no-store",
+            signal: controller.signal 
+          });
+          statusPassed = true;
+        } catch (error) {
+          // Jika gagal terkoneksi atau timeout, tandai sebagai offline secara paksa
+          statusPassed = false;
+        } finally {
+          clearTimeout(timeoutId);
+        }
+      }
+
+      isCurrentlyOnline = statusPassed;
+      
+      // Update UI jika terdapat perubahan status konektivitas jaringan
+      if (prevStatus !== isCurrentlyOnline) {
+        updateOnlineStatusUI();
+      }
+    }
+
+    function updateOnlineStatusUI() {
+      const isOnline = isCurrentlyOnline;
+      const banner = document.getElementById('offline-banner'); 
+      if (banner) banner.classList.toggle('hidden', isOnline);
       
       const dot = document.getElementById('status-dot'); 
       if (dot) {
@@ -1262,27 +1290,37 @@
         syncBadge.textContent = isOnline ? 'Lokal Tersinkron' : 'Mode Luring'; 
         syncBadge.className = `font-bold px-2.5 py-0.5 rounded-lg text-[11px] ${isOnline ? 'text-emerald-600 bg-emerald-50 border border-emerald-200 animate-blink' : 'text-amber-600 bg-amber-50 border border-amber-200'}`; 
       }
+
+      if (!isOnline) {
+        showCustomAlert("Mode Luring (Offline)", "Sistem mendeteksi koneksi luring atau tidak stabil. Perubahan data tetap tersimpan di browser.", false);
+      } else {
+        showCustomAlert("Kembali Online", "Koneksi internet terdeteksi. Sistem berjalan normal.", true);
+      }
     }
 
     function triggerManualSync() {
-      if (!navigator.onLine) return showCustomAlert("Mode Luring Aktif", "Anda saat ini sedang luring. Sinkronisasi ditunda, namun seluruh data lokal Anda tetap aman.", false);
-      
-      const btnIcon = document.getElementById('btn-sync-icon'), btnText = document.getElementById('btn-sync-text'), btn = document.getElementById('btn-manual-sync');
-      btn.disabled = true; 
-      
-      if (btnIcon) btnIcon.querySelector('svg').classList.add('animate-spin');
-      btnText.textContent = "Menyelaraskan...";
-      
-      setTimeout(() => { 
-        btn.disabled = false; 
-        if (btnIcon) btnIcon.querySelector('svg').classList.remove('animate-spin');
-        btnText.textContent = "Sinkronkan"; 
-        showCustomAlert("Sinkronisasi Sukses", "Seluruh data lokal telah divalidasi di lokal browser.", true); 
-      }, 1500);
+      // Jalankan cek jaringan terlebih dahulu sebelum sinkronisasi manual
+      checkNetworkStatus().then(() => {
+        if (!isCurrentlyOnline) return showCustomAlert("Mode Luring Aktif", "Anda saat ini sedang luring. Sinkronisasi ditunda, namun seluruh data lokal Anda tetap aman.", false);
+        
+        const btnIcon = document.getElementById('btn-sync-icon'), btnText = document.getElementById('btn-sync-text'), btn = document.getElementById('btn-manual-sync');
+        btn.disabled = true; 
+        
+        if (btnIcon) btnIcon.querySelector('svg').classList.add('animate-spin');
+        btnText.textContent = "Menyelaraskan...";
+        
+        setTimeout(() => { 
+          btn.disabled = false; 
+          if (btnIcon) btnIcon.querySelector('svg').classList.remove('animate-spin');
+          btnText.textContent = "Sinkronkan"; 
+          showCustomAlert("Sinkronisasi Sukses", "Seluruh data lokal telah divalidasi di lokal browser.", true); 
+        }, 1500);
+      });
     }
 
-    window.addEventListener('online', () => { updateOnlineStatus(); showCustomAlert("Kembali Online", "Koneksi internet terdeteksi. Portal berjalan dalam mode online.", true); });
-    window.addEventListener('offline', () => { updateOnlineStatus(); showCustomAlert("Mode Luring (Offline)", "Anda sedang luring. Beberapa fitur & perubahan data tetap berjalan secara luring.", false); });
+    // Tetap dengarkan event listener browser dasar (sebagai pertolongan pertama/instan)
+    window.addEventListener('online', () => { checkNetworkStatus(); });
+    window.addEventListener('offline', () => { isCurrentlyOnline = false; updateOnlineStatusUI(); });
 
     function registerServiceWorker() {
       const protocol = window.location.protocol;
@@ -1301,7 +1339,6 @@
     function requestEmergencyResetSession() { document.getElementById('confirm-reset-modal').classList.remove('hidden'); }
     function closeConfirmResetModal() { document.getElementById('confirm-reset-modal').classList.add('hidden'); }
     
-    // Perbaikan total untuk membersihkan semua data lokal yang terdaftar
     function executeEmergencyResetSession() { 
       const keysToRemove = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -1318,6 +1355,7 @@
       setTimeout(() => window.location.reload(), 1500); 
     }
 
+    // Pembaruan format jam agar presisi
     function updateClock() {
       const now = new Date(); const offset = -now.getTimezoneOffset() / 60;
       let tz = "WIB"; if (offset === 8) tz = "WITA"; else if (offset === 9) tz = "WIT"; else if (offset > 9 || offset < 7) tz = "GMT" + (offset >= 0 ? "+" : "") + offset;
@@ -1336,11 +1374,16 @@
       renderAgenda(); 
       renderCalendar(); 
       
-      // Menyatukan pembacaan status memo tunggal agar efisien (BUG 3 FIXED)
       loadMemoForSelectedDate();
       
       updatePWAInstallationUI();
-      updateOnlineStatus(); 
+      
+      // Jalankan cek status jaringan pertama kali secara komprehensif saat render DOM
+      checkNetworkStatus(); 
+      
+      // Jalankan active heartbeat ping setiap 10 detik untuk akurasi di laptop/desktop
+      setInterval(checkNetworkStatus, 10000);
+
       registerServiceWorker(); 
       updateClock(); 
       setInterval(updateClock, 1000);
